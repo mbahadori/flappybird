@@ -3,9 +3,9 @@ import sys
 import pygame
 from pygame.locals import *
 
-player = 'gallery/images/flappy bird.png'
-background = 'gallery/images/background.jpeg'
-pipe = 'gallery/images/pipe.png'
+player = 'bird/flappy bird.png'
+background = 'background/background.jpeg'
+pipe = 'pipe/pipe.png'
 foreground = '/images/base.png'
 
 fps = 64
