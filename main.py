@@ -6,6 +6,7 @@ from pygame.locals import *
 #bird = pygame.image.load(flappy bird.png).convert()
 player = 'gallery/images/flappy bird.png'
 background = 'gallery/images/background.jpeg'
+pipe = 'gallery/images/pipe.png'
 
 
 fps = 64
