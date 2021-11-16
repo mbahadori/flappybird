@@ -73,7 +73,7 @@ if __name__ == "__main__":
                 else:
                     screen.blit(game_images['background'], (0, 0))
                     screen.blit(game_images['flappybird'], (horizontal, vertical))
-                    screen.blit(game_images['sea_level'], (ground, ground_y))
+                    screen.blit(game_images['foreground'], (ground, ground_y))
 
                     # refreshes screen
                     pygame.display.update()
