@@ -37,9 +37,9 @@ if __name__ == "__main__":
         pygame.image.load('9/9.png').convert_alpha()
     )
     game_images['flappybird'] = pygame.image.load(player).convert_alpha()
-    game_images['sea_level'] = pygame.image.load(foreground).convert_alpha()
+    game_images['foreground'] = pygame.image.load(foreground).convert_alpha()
     game_images['background'] = pygame.image.load(background).convert_alpha()
-    game_images['pipeimage'] = (pygame.transform.rotate(pygame.image.load(pipe)
+    game_images['pipe'] = (pygame.transform.rotate(pygame.image.load(pipe)
                                                         .convert_alpha(),
                                                         180),
                                 pygame.image.load(pipe).convert_alpha())
