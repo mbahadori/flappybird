@@ -3,10 +3,10 @@ import sys
 import pygame
 from pygame.locals import *
 
-player = 'gallery/images/flappy bird.png'
-background = 'gallery/images/background.jpeg'
-pipe = 'gallery/images/pipe.png'
-foreground = '/images/base.png'
+bird = 'bird/flappy bird.png'
+background = 'background/background.jpeg'
+pipe = 'pipe/pipe.png'
+#foreground = '/images/base.png'
 
 fps = 64
 screen_width = 289
@@ -35,8 +35,8 @@ if __name__ == "__main__":
         pygame.image.load('8/8.png').convert_alpha(),
         pygame.image.load('9/9.png').convert_alpha()
     )
-    game_images['player'] = pygame.image.load(player).convert_alpha()
-    game_images['foreground'] = pygame.image.load(foreground).convert_alpha()
+    game_images['bird'] = pygame.image.load(bird).convert_alpha()
+    #game_images['foreground'] = pygame.image.load(foreground).convert_alpha()
     game_images['background'] = pygame.image.load(background).convert_alpha()
     game_images['pipe'] = (pygame.transform.rotate(pygame.image.load(pipe)
                                                         .convert_alpha(),
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
         # sets the coordinates of flappy bird
         horizontal = int(screen_width / 5)
-        vertical = int((screen_height - game_images['flappybird'].get_height()) / 2)
+        vertical = int((screen_height - game_images['bird'].get_height()) / 2)
 
         # foreground
         ground = 0
@@ -71,8 +71,8 @@ if __name__ == "__main__":
                 # no keys pressed
                 else:
                     screen.blit(game_images['background'], (0, 0))
-                    screen.blit(game_images['flappybird'], (horizontal, vertical))
-                    screen.blit(game_images['foreground'], (ground, ground_y))
+                    screen.blit(game_images['bird'], (horizontal, vertical))
+                    #screen.blit(game_images['foreground'], (ground, ground_y))
 
                     # refreshes screen
                     pygame.display.update()
