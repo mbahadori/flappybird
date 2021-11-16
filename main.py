@@ -7,6 +7,7 @@ bird = 'bird/flappy bird.png'
 background = 'background/background.jpeg'
 pipe = 'pipe/pipe.png'
 #foreground = '/images/base.png'
+# comment
 
 fps = 64
 screen_width = 289
