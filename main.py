@@ -25,16 +25,16 @@ if __name__ == "__main__":
     pygame.display.set_caption('Flappy Bird Game')
 
     game_images['scoreimages'] = (
-        pygame.image.load('images/0.png').convert_alpha(),
-        pygame.image.load('images/1.png').convert_alpha(),
-        pygame.image.load('images/2.png').convert_alpha(),
-        pygame.image.load('images/3.png').convert_alpha(),
-        pygame.image.load('images/4.png').convert_alpha(),
-        pygame.image.load('images/5.png').convert_alpha(),
-        pygame.image.load('images/6.png').convert_alpha(),
-        pygame.image.load('images/7.png').convert_alpha(),
-        pygame.image.load('images/8.png').convert_alpha(),
-        pygame.image.load('images/9.png').convert_alpha()
+        pygame.image.load('0/0.png').convert_alpha(),
+        pygame.image.load('1/1.png').convert_alpha(),
+        pygame.image.load('2/2.png').convert_alpha(),
+        pygame.image.load('3/3.png').convert_alpha(),
+        pygame.image.load('4/4.png').convert_alpha(),
+        pygame.image.load('5/5.png').convert_alpha(),
+        pygame.image.load('6/6.png').convert_alpha(),
+        pygame.image.load('7/7.png').convert_alpha(),
+        pygame.image.load('8/8.png').convert_alpha(),
+        pygame.image.load('9/9.png').convert_alpha()
     )
     game_images['flappybird'] = pygame.image.load(player).convert_alpha()
     game_images['sea_level'] = pygame.image.load(foreground).convert_alpha()
