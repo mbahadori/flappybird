@@ -170,7 +170,7 @@ if __name__ == "__main__":
                 screen.blit(game_images['numbers'][digit], (Xoffset, screen_height * 0.12))
                 Xoffset += game_images['numbers'][digit].get_width()
             pygame.display.update()
-            fps_clock.tick(fps)
+            framepersecond_clock.tick(fps)
 
 
     def getRandomPipe():
