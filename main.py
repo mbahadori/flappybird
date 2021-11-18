@@ -47,40 +47,22 @@ if __name__ == "__main__":
     print("WELCOME TO THE FLAPPY BIRD GAME")
     print("Press space or enter to start the game")
 
-    while True:
 
-        # sets the coordinates of flappy bird
-        horizontal = int(screen_width / 5)
-        vertical = int((screen_height - game_images['bird'].get_height()) / 2)
-
-        # foreground
-        ground = 0
+    def welcomeScreen():
+        player_x = int(screen_width / 8)
+        player_y = int((screen_height - game_images['bird'].get_height()) / 2)
         while True:
             for event in pygame.event.get():
-
-                # cross button = close the game
                 if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                     pygame.quit()
-
-                    # exit game
                     sys.exit()
-
-                    # space or up key = start game
                 elif event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
-                    flappygame()
-
-                # no keys pressed
+                    return
                 else:
                     screen.blit(game_images['background'], (0, 0))
-                    screen.blit(game_images['bird'], (horizontal, vertical))
-                    # screen.blit(game_images['foreground'], (ground, ground_y))
-
-                    # refreshes screen
+                    screen.blit(game_images['bird'], (player_x, player_y))
                     pygame.display.update()
-
-                    # set the rate of frame per second
                     framepersecond_clock.tick(fps)
-
     def mainGame():
         score = 0
         player_x = int(screen_width / 8)
