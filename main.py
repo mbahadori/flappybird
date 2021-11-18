@@ -3,7 +3,7 @@ import sys
 import pygame
 from pygame.locals import *
 
-bird = 'bird/flappy bird.png'
+bird = 'bird/bird.png'
 background = 'background/background.jpeg'
 pipe = 'pipe/pipe.png'
 #foreground = '/images/base.png'
@@ -36,7 +36,7 @@ if __name__ == "__main__":
         pygame.image.load('8/8.png').convert_alpha(),
         pygame.image.load('9/9.png').convert_alpha()
     )
-    game_images['bird'] = pygame.image.load(bird).convert_alpha()
+    game_images['fbird'] = pygame.image.load(bird).convert_alpha()
     #game_images['foreground'] = pygame.image.load(foreground).convert_alpha()
     game_images['background'] = pygame.image.load(background).convert_alpha()
     game_images['pipe'] = (pygame.transform.rotate(pygame.image.load(pipe)
