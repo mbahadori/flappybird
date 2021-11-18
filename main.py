@@ -51,6 +51,11 @@ if __name__ == "__main__":
     def welcomeScreen():
         player_x = int(screen_width / 8)
         player_y = int((screen_height - game_images['bird'].get_height()) / 2)
+        message_x = int((screen_width - game_images['message'].get_width()) / 2)
+        message_y = int(screen_height * 0.2)
+        title_x = int((screen_width - game_images['message'].get_width()) / 2)
+        title_y = int(screen_height * 0.04)
+        base_x = 0
         while True:
             for event in pygame.event.get():
                 if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
@@ -60,7 +65,10 @@ if __name__ == "__main__":
                     return
                 else:
                     screen.blit(game_images['background'], (0, 0))
+                    screen.blit(game_images['message'], (message_x, message_y))
                     screen.blit(game_images['bird'], (player_x, player_y))
+                    screen.blit(game_images['base'], (base_x, ground_y))
+                    screen.blit(game_images['title'], (title_x, title_y))
                     pygame.display.update()
                     framepersecond_clock.tick(fps)
     def mainGame():
