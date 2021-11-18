@@ -186,3 +186,22 @@ if __name__ == "__main__":
         return pipe
 
 
+def isCollide(player_x, player_y, upperPipes, lowerPipes):
+    if player_y > ground_y - 25 or player_y < 0:
+        game_sounds['hit'].play()
+        return True
+
+    for pipe in upperPipes:
+        pipeHeight = game_images['pipe'][0].get_height()
+        if (player_y < pipeHeight + pipe['y']) and (
+                abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
+            game_sounds['hit'].play()
+            return True
+
+    for pipe in lowerPipes:
+        if (player_y + game_images['player'].get_height() > pipe['y']) and (
+                abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
+            game_sounds['hit'].play()
+            return True
+
+    return False
