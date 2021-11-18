@@ -79,7 +79,7 @@ if __name__ == "__main__":
                     pygame.display.update()
 
                     # set the rate of frame per second
-                    framepersecond_clock.tick(framepersecond)
+                    framepersecond_clock.tick(fps)
 
     def mainGame():
         score = 0
