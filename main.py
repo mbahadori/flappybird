@@ -13,8 +13,8 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = int(SCREEN_WIDTH * 0.8)
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 """
-screen_width = 289
-screen_height = 511
+screen_width = 350
+screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 ground_y = screen_height*0.8
 game_images = {}
@@ -55,6 +55,9 @@ if __name__ == "__main__":
 
     print("WELCOME TO THE FLAPPY BIRD GAME")
     print("Press space or enter to start the game")
+    while True:
+        welcomeScreen()
+        mainGame()
 
 
     def welcomeScreen():
@@ -79,7 +82,7 @@ if __name__ == "__main__":
                     screen.blit(game_images['base'], (base_x, ground_y))
                     screen.blit(game_images['title'], (title_x, title_y))
                     pygame.display.update()
-                    framepersecond_clock.tick(fps)
+                    framepersecond_clock.tick(framepersecond)
     def mainGame():
         score = 0
         player_x = int(screen_width / 8)
