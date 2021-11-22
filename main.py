@@ -71,7 +71,7 @@ if __name__ == "__main__":
         while True:
             for event in pygame.event.get():
                 if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
-                    pygame.QUIT
+                    pygame.quit()
                     sys.exit()
                 elif event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
                     return
@@ -120,7 +120,6 @@ if __name__ == "__main__":
                     if player_y > 0:
                         playerVelY = playerFlapVel
                         playerFlapped = True
-                        game_sounds['wing'].play()
 
             crashTest = isCollide(player_x, player_y, upperPipes, lowerPipes)
             if crashTest:
@@ -172,7 +171,7 @@ if __name__ == "__main__":
                 screen.blit(game_images['numbers'][digit], (Xoffset, screen_height * 0.12))
                 Xoffset += game_images['numbers'][digit].get_width()
             pygame.display.update()
-            framepersecond_clock.tick(fps)
+            framepersecond_clock.tick(framepersecond)
 
 
     def getRandomPipe():
