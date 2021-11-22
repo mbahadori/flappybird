@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 bg=(255,255,255)
 while 5==5:
     screen.fill(bg)
-fps = 64
+fps = 32
 screen_width = 289
 screen_height = 511
 screen = pygame.display.set_mode((screen_width, screen_height))
