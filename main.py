@@ -8,19 +8,22 @@ background = 'background/background.jpeg'
 pipe = 'pipe/pipe.png'
 #foreground = '/images/base.png'
 # comment
+"""
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = int(SCREEN_WIDTH * 0.8)
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-bg=(255,255,255)
-while 5==5:
-    screen.fill(bg)
-framepersecond = 32
+"""
 screen_width = 289
 screen_height = 511
 screen = pygame.display.set_mode((screen_width, screen_height))
 ground_y = screen_height*0.8
 game_images = {}
 game_sounds = {}
+bg=(255,255,255)
+while 5==5:
+    screen.fill(bg)
+framepersecond = 32
+
 
 
 # game start
