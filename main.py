@@ -27,15 +27,46 @@ while 5==5:
 
 framepersecond = 32
 
+def getRandomPipe():
+        pipeHeight = game_images['pipe'][0].get_height()
+        offset = screen_height / 3
+        y2 = offset + random.randrange(0, int(screen_height - 1.2 * offset))
+        pipeX = screen_width + 10
+        y1 = pipeHeight - y2 + offset
+        pipe = [
+            {'x': pipeX, 'y': -y1},
+            {'x': pipeX, 'y': y2}
+        ]
+        return pipe
 
+
+def isCollide(player_x, player_y, upperPipes, lowerPipes):
+    if player_y > ground_y - 25 or player_y < 0:
+        # game_sounds['hit'].play()
+        return True
+
+    for pipe in upperPipes:
+        pipeHeight = game_images['pipe'][0].get_height()
+        if (player_y < pipeHeight + pipe['y']) and (
+                abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
+            # game_sounds['hit'].play()
+            return True
+
+    for pipe in lowerPipes:
+        if (player_y + game_images['bird'].get_height() > pipe['y']) and (
+                abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
+            # game_sounds['hit'].play()
+            return True
+
+    return False
 def welcomeScreen():
     player_x = int(screen_width / 8)
     player_y = int((screen_height - game_images['bird'].get_height()) / 2)
-    message_x = int((screen_width - game_images['message'].get_width()) / 2)
-    message_y = int(screen_height * 0.2)
-    title_x = int((screen_width - game_images['message'].get_width()) / 2)
-    title_y = int(screen_height * 0.04)
-    base_x = 0
+    # message_x = int((screen_width - game_images['message'].get_width()) / 2)
+    # message_y = int(screen_height * 0.2)
+    # title_x = int((screen_width - game_images['message'].get_width()) / 2)
+    # title_y = int(screen_height * 0.04)
+    # base_x = 0
     while True:
         for event in pygame.event.get():
             if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
@@ -45,10 +76,10 @@ def welcomeScreen():
                 return
             else:
                 screen.blit(game_images['background'], (0, 0))
-                screen.blit(game_images['message'], (message_x, message_y))
+                # screen.blit(game_images['message'], (message_x, message_y))
                 screen.blit(game_images['bird'], (player_x, player_y))
-                screen.blit(game_images['base'], (base_x, ground_y))
-                screen.blit(game_images['title'], (title_x, title_y))
+                # screen.blit(game_images['base'], (base_x, ground_y))
+                # screen.blit(game_images['title'], (title_x, title_y))
                 pygame.display.update()
                 framepersecond_clock.tick(framepersecond)
 
@@ -128,18 +159,18 @@ def mainGame():
         for upperPipe, lowerPipe in zip(upperPipes, lowerPipes):
             screen.blit(game_images['pipe'][0], (upperPipe['x'], upperPipe['y']))
             screen.blit(game_images['pipe'][1], (lowerPipe['x'], lowerPipe['y']))
-        screen.blit(game_images['base'], (base_x, ground_y))
+        # screen.blit(game_images['base'], (base_x, ground_y))
         screen.blit(game_images['bird'], (player_x, player_y))
 
         myDigits = [int(x) for x in list(str(score))]
         width = 0
         for digit in myDigits:
-            width += game_images['numbers'][digit].get_width()
+            width += game_images['scoreimages'][digit].get_width()
         Xoffset = (screen_width - width) / 2
 
         for digit in myDigits:
-            screen.blit(game_images['numbers'][digit], (Xoffset, screen_height * 0.12))
-            Xoffset += game_images['numbers'][digit].get_width()
+            screen.blit(game_images['scoreimages'][digit], (Xoffset, screen_height * 0.12))
+            Xoffset += game_images['scoreimages'][digit].get_width()
         pygame.display.update()
         framepersecond_clock.tick(framepersecond)
 
@@ -175,40 +206,3 @@ if __name__ == "__main__":
     while True:
         welcomeScreen()
         mainGame()
-
-
-
-
-
-    def getRandomPipe():
-        pipeHeight = game_images['pipe'][0].get_height()
-        offset = screen_height / 3
-        y2 = offset + random.randrange(0, int(screen_height - game_images['base'].get_height() - 1.2 * offset))
-        pipeX = screen_width + 10
-        y1 = pipeHeight - y2 + offset
-        pipe = [
-            {'x': pipeX, 'y': -y1},
-            {'x': pipeX, 'y': y2}
-        ]
-        return pipe
-
-
-def isCollide(player_x, player_y, upperPipes, lowerPipes):
-    if player_y > ground_y - 25 or player_y < 0:
-        game_sounds['hit'].play()
-        return True
-
-    for pipe in upperPipes:
-        pipeHeight = game_images['pipe'][0].get_height()
-        if (player_y < pipeHeight + pipe['y']) and (
-                abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
-            game_sounds['hit'].play()
-            return True
-
-    for pipe in lowerPipes:
-        if (player_y + game_images['player'].get_height() > pipe['y']) and (
-                abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
-            game_sounds['hit'].play()
-            return True
-
-    return False
