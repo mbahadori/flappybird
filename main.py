@@ -56,7 +56,7 @@ def isCollide(player_x, player_y, upperPipes, lowerPipes):
                 abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
             # game_sounds['hit'].play()
             return True
-
+#
     return False
 def welcomeScreen():
     player_x = int(screen_width / 8)
