@@ -6,6 +6,7 @@ pygame.init()
 bird = 'bird/bird.png'
 background = 'background/background.jpeg'
 pipe = 'pipe/pipe.png'
+title = 'title/title.png'
 #foreground = '/images/base.png'
 # comment
 """
