@@ -23,7 +23,6 @@ bg=(255,255,255)
 while 5==5:
     screen.fill(bg)
 """
-
 framepersecond = 32
 
 def getRandomPipe():
@@ -63,8 +62,8 @@ def welcomeScreen():
     player_y = int((screen_height - game_images['bird'].get_height()) / 2)
     # message_x = int((screen_width - game_images['message'].get_width()) / 2)
     # message_y = int(screen_height * 0.2)
-    # title_x = int((screen_width - game_images['message'].get_width()) / 2)
-    # title_y = int(screen_height * 0.04)
+    title_x = int((screen_width - game_images['title'].get_width()) / 2)
+    title_y = int(screen_height * 0.04)
     # base_x = 0
     while True:
         for event in pygame.event.get():
@@ -78,7 +77,7 @@ def welcomeScreen():
                 # screen.blit(game_images['message'], (message_x, message_y))
                 screen.blit(game_images['bird'], (player_x, player_y))
                 # screen.blit(game_images['base'], (base_x, ground_y))
-                # screen.blit(game_images['title'], (title_x, title_y))
+                screen.blit(game_images['title'], (title_x, title_y))
                 pygame.display.update()
                 framepersecond_clock.tick(framepersecond)
 
