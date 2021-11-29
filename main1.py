@@ -11,33 +11,7 @@ game_images = {}
 player = 'bird/bird.png'
 background = 'background/background.jpeg'
 pipe = 'pipe/pipe.png'
-if __name__ == "__main__":
-    pygame.init()
-    fps_clock = pygame.time.Clock()
-    pygame.display.set_caption('Flappy Bird')
-    game_images['numbers'] = (
-        pygame.image.load('0/0.png').convert_alpha(),
-        pygame.image.load('1/1.png').convert_alpha(),
-        pygame.image.load('2/2.png').convert_alpha(),
-        pygame.image.load('3/3.png').convert_alpha(),
-        pygame.image.load('4/4.png').convert_alpha(),
-        pygame.image.load('5/5.png').convert_alpha(),
-        pygame.image.load('6/6.png').convert_alpha(),
-        pygame.image.load('7/7.png').convert_alpha(),
-        pygame.image.load('8/8.png').convert_alpha(),
-        pygame.image.load('9/9.png').convert_alpha()
-    )
-    game_images['base'] = pygame.image.load('base/ground.png').convert_alpha()
-    game_images['pipe'] = (
-        pygame.transform.rotate(pygame.image.load(pipe).convert_alpha(), 180),
-        pygame.image.load(pipe).convert_alpha()
-    )
-    game_images['background'] = pygame.image.load(background).convert_alpha()
-    game_images['player'] = pygame.image.load(player).convert_alpha()
 
-    while True:
-        welcomeScreen()
-        mainGame()
 def welcomeScreen():
     player_x = int(screen_width/8)
     player_y = int((screen_height - game_images['player'].get_height())/2)
@@ -177,3 +151,31 @@ def getRandomPipe():
         {'x': pipeX, 'y': y2}
     ]
     return pipe
+
+if __name__ == "__main__":
+    pygame.init()
+    fps_clock = pygame.time.Clock()
+    pygame.display.set_caption('Flappy Bird')
+    game_images['numbers'] = (
+        pygame.image.load('0/0.png').convert_alpha(),
+        pygame.image.load('1/1.png').convert_alpha(),
+        pygame.image.load('2/2.png').convert_alpha(),
+        pygame.image.load('3/3.png').convert_alpha(),
+        pygame.image.load('4/4.png').convert_alpha(),
+        pygame.image.load('5/5.png').convert_alpha(),
+        pygame.image.load('6/6.png').convert_alpha(),
+        pygame.image.load('7/7.png').convert_alpha(),
+        pygame.image.load('8/8.png').convert_alpha(),
+        pygame.image.load('9/9.png').convert_alpha()
+    )
+    game_images['base'] = pygame.image.load('base/ground.png').convert_alpha()
+    game_images['pipe'] = (
+        pygame.transform.rotate(pygame.image.load(pipe).convert_alpha(), 180),
+        pygame.image.load(pipe).convert_alpha()
+    )
+    game_images['background'] = pygame.image.load(background).convert_alpha()
+    game_images['player'] = pygame.image.load(player).convert_alpha()
+
+    while True:
+        welcomeScreen()
+        mainGame()
