@@ -27,7 +27,7 @@ if __name__ == "__main__":
         pygame.image.load('8/8.png').convert_alpha(),
         pygame.image.load('9/9.png').convert_alpha()
     )
-    game_images['base'] = pygame.image.load('base/base.png').convert_alpha()
+    game_images['base'] = pygame.image.load('base/ground.png').convert_alpha()
     game_images['pipe'] = (
         pygame.transform.rotate(pygame.image.load(pipe).convert_alpha(), 180),
         pygame.image.load(pipe).convert_alpha()
