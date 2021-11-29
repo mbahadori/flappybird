@@ -18,7 +18,6 @@ screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 ground_y = screen_height*0.8
 game_images = {}
-game_sounds = {}
 """
 bg=(255,255,255)
 while 5==5:
@@ -132,7 +131,7 @@ def mainGame():
             if pipeMidPos <= playerMidPos < pipeMidPos + 4:
                 score += 1
                 print(f"Your Score is {score}")
-                game_sounds['point'].play()
+                # game_sounds['point'].play()
 
         if playerVelY < playerMaxVelY and not playerFlapped:
             playerVelY += playerAccY
