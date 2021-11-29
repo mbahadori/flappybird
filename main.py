@@ -193,6 +193,7 @@ if __name__ == "__main__":
         pygame.image.load('9/9.png').convert_alpha()
     )
     game_images['bird'] = pygame.image.load(bird).convert_alpha()
+    game_images['title'] = pygame.image.load(title).convert_alpha()
     #game_images['foreground'] = pygame.image.load(foreground).convert_alpha()
     game_images['background'] = pygame.image.load(background).convert_alpha()
     game_images['pipe'] = (pygame.transform.rotate(pygame.image.load(pipe)
