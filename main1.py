@@ -153,7 +153,7 @@ def getRandomPipe():
     pipeHeight = game_images['pipe'][0].get_height()
     offset = screen_height / 2
     y2 = offset + random.randrange(0, int(screen_height - game_images['base'].get_height() - 1.2 * offset))
-    pipeX = screen_width + 22
+    pipeX = screen_width + 20
     y1 = pipeHeight - y2 + offset
     pipe = [
         {'x': pipeX, 'y': -y1},
