@@ -12,10 +12,16 @@ game_images = {}
 player = 'bird/bird.png'
 background = 'background/background.png'
 pipe = 'pipe/pipe.png'
+title = 'title/title.jpeg'
+message = 'background/background.png'
 
 def welcomeScreen():
     player_x = int(screen_width/8)
     player_y = int((screen_height - game_images['player'].get_height())/2)
+    message_x = int((screen_width - game_images['message'].get_width()) / 2)
+    message_y = int(screen_height * 0.2)
+    title_x = int((screen_width - game_images['message'].get_width()) / 2)
+    title_y = int(screen_height * 0.04)
     base_x = 0
     while True:
         for event in pygame.event.get():
@@ -25,9 +31,11 @@ def welcomeScreen():
             elif event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
                 return
             else:
-                screen.blit(game_images['background'],(0,0))
-                screen.blit(game_images['player'],(player_x,player_y))
+                screen.blit(game_images['background'], (0, 0))
+                screen.blit(game_images['message'], (message_x, message_y))
+                screen.blit(game_images['player'], (player_x, player_y))
                 screen.blit(game_images['base'], (base_x, ground_y))
+                screen.blit(game_images['title'], (title_x, title_y))
                 pygame.display.update()
                 fps_clock.tick(fps)
 
@@ -170,10 +178,12 @@ if __name__ == "__main__":
         pygame.image.load('9/9.png').convert_alpha()
     )
     game_images['base'] = pygame.image.load('base/ground.png').convert_alpha()
+    game_images['message'] = pygame.image.load('background/background.png').convert_alpha()
     game_images['pipe'] = (
         pygame.transform.rotate(pygame.image.load(pipe).convert_alpha(), 180),
         pygame.image.load(pipe).convert_alpha()
     )
+    game_images['title'] = pygame.image.load(title).convert_alpha()
     game_images['background'] = pygame.image.load(background).convert_alpha()
     game_images['player'] = pygame.image.load(player).convert_alpha()
 
