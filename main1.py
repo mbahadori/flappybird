@@ -2,14 +2,15 @@ import random
 import sys
 import pygame
 from pygame.locals import *
+
 fps = 32
-screen_width = 289
-screen_height = 511
+screen_width = 288
+screen_height = 505
 screen = pygame.display.set_mode((screen_width,screen_height))
 ground_y = screen_height*0.8
 game_images = {}
 player = 'bird/bird.png'
-background = 'background/background.jpeg'
+background = 'background/background.png'
 pipe = 'pipe/pipe.png'
 
 def welcomeScreen():
