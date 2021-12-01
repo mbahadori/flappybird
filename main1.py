@@ -5,7 +5,7 @@ from pygame.locals import *
 
 fps = 32
 screen_width = 288
-screen_height = 505
+screen_height = 560
 screen = pygame.display.set_mode((screen_width,screen_height))
 ground_y = screen_height*0.8
 game_images = {}
@@ -51,12 +51,12 @@ def mainGame():
 
     upperPipes = [
         {'x': screen_width + 200, 'y': newPipe1[0]['y']},
-        {'x': screen_width + 200 + (screen_width / 2), 'y': newPipe2[0]['y']}
+        {'x': screen_width + (screen_width / 2) + 200, 'y': newPipe2[0]['y']}
     ]
 
     lowerPipes = [
         {'x': screen_width + 200, 'y': newPipe1[1]['y']},
-        {'x': screen_width + 200 + (screen_width / 2), 'y': newPipe2[1]['y']}
+        {'x': screen_width + (screen_width / 2) + 200, 'y': newPipe2[1]['y']}
     ]
 
     pipeVelX = -4
