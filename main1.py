@@ -5,7 +5,7 @@ from pygame.locals import *
 
 fps = 32
 screen_width = 288
-screen_height = 560
+screen_height = 511
 screen = pygame.display.set_mode((screen_width,screen_height))
 ground_y = screen_height*0.8
 game_images = {}
@@ -136,7 +136,7 @@ def isCollide(player_x, player_y, upperPipes, lowerPipes):
         return True
 
     for pipe in upperPipes:
-        pipeHeight = game_images['pipe'][0].get_height()
+        pipeHeight = game_images['pipe'][0].get_height() - 37
         if (player_y < pipeHeight + pipe['y']) and (
                 abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
             return True
