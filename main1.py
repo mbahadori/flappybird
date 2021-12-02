@@ -42,21 +42,18 @@ def welcomeScreen():
 
 def mainGame():
     score = 0
-    player_x = int(screen_width / 8)
-    player_y = int(screen_height / 2)
+    player_x = int(screen_width / 8) #36
+    player_y = int(screen_height / 2) #255.5
     base_x = 0
 
     newPipe1 = getRandomPipe()
-    newPipe2 = getRandomPipe()
 
     upperPipes = [
-        {'x': screen_width + 200, 'y': newPipe1[0]['y']},
-        {'x': screen_width + (screen_width / 2) + 200, 'y': newPipe2[0]['y']}
+        {'x': screen_width, 'y': newPipe1[0]['y']}
     ]
 
     lowerPipes = [
-        {'x': screen_width + 200, 'y': newPipe1[1]['y']},
-        {'x': screen_width + (screen_width / 2) + 200, 'y': newPipe2[1]['y']}
+        {'x': screen_width, 'y': newPipe1[1]['y']}
     ]
 
     pipeVelX = -4
@@ -132,11 +129,11 @@ def mainGame():
 
 
 def isCollide(player_x, player_y, upperPipes, lowerPipes):
-    if player_y > ground_y - 25 or player_y < 0:
+    if player_y > ground_y or player_y < 0:
         return True
 
     for pipe in upperPipes:
-        pipeHeight = game_images['pipe'][0].get_height() - 37
+        pipeHeight = game_images['pipe'][0].get_height()
         if (player_y < pipeHeight + pipe['y']) and (
                 abs(player_x - pipe['x']) < game_images['pipe'][0].get_width() - 15):
             return True
@@ -151,12 +148,12 @@ def isCollide(player_x, player_y, upperPipes, lowerPipes):
 
 def getRandomPipe():
     pipeHeight = game_images['pipe'][0].get_height()
-    offset = screen_height / 2
+    offset = screen_height / 2.4
     y2 = offset + random.randrange(0, int(screen_height - game_images['base'].get_height() - 1.2 * offset))
-    pipeX = screen_width + 20
+    pipeX = screen_width
     y1 = pipeHeight - y2 + offset
     pipe = [
-        {'x': pipeX, 'y': -y1},
+        {'x': pipeX, 'y': -y1} ,
         {'x': pipeX, 'y': y2}
     ]
     return pipe
