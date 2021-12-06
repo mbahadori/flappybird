@@ -56,7 +56,7 @@ def mainGame():
         {'x': screen_width, 'y': newPipe1[1]['y']}
     ]
 
-    pipeVelX = -4
+    pipeVelX = -4 # how fast game moves (pipes are created)
 
     playerVelY = -9
     playerMaxVelY = 10
