@@ -148,7 +148,7 @@ def isCollide(player_x, player_y, upperPipes, lowerPipes):
 
 def getRandomPipe():
     pipeHeight = game_images['pipe'][0].get_height()
-    offset = screen_height / 2
+    offset = screen_height / 3
     y2 = offset + random.randrange(0, int(screen_height - game_images['base'].get_height() - 1.2 * offset))
     pipeX = screen_width
     y1 = pipeHeight - y2 + offset
