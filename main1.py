@@ -79,13 +79,19 @@ def mainGame():
         crashTest = isCollide(player_x, player_y, upperPipes, lowerPipes)
         if crashTest:
             return
-
+        count = 1
         playerMidPos = player_x + game_images['player'].get_width() / 2
         for pipe in upperPipes:
             pipeMidPos = pipe['x'] + game_images['pipe'][0].get_width() / 2
             if pipeMidPos <= playerMidPos < pipeMidPos + 4:
                 score += 1
                 print(f"Your Score is {score}")
+                """
+                if score % (10*count) == 0 :
+                pipeVelX -= .5
+                count += 1
+                """
+
 
         if playerVelY < playerMaxVelY and not playerFlapped:
             playerVelY += playerAccY
